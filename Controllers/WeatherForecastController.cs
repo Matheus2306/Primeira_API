@@ -35,9 +35,11 @@ namespace PrimeiraAPI.Controllers
         [HttpGet("primes", Name = "GetPrimes")]
         public IEnumerable<int> GetPrimes()
         {
+            //Retorna os números primos de 0 a 1000 em uma lista
             return Enumerable.Range(0, 1001).Where(IsPrime).ToList();
         }
 
+        //Método para verificar se um número é primo
         private bool IsPrime(int number)
         {
             if (number < 2) return false;
